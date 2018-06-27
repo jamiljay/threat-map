@@ -158,9 +158,7 @@ class ThreatMap extends React.Component {
                                             className={`threat-marker ${isZoomed ? "zoom-out" : "zoom-in"}`}
                                             cx={0}
                                             cy={0}
-                                            r={threat.virus.length*2}
-                                            fill="rgba(233, 30, 99, 0.5)"
-                                            stroke="rgba(199, 14, 77, 0.5)"
+                                            r={threat.virus.length * this.state.zoom * 2}
                                         />
                                     </SVGOrigin>
                                 </Marker>

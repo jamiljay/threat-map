@@ -129,7 +129,7 @@ const clientConfig = {
 		new CopyWebpackPlugin([
 			{ 
 				from: './client/app/components/map/world-110m.json', 
-				to: '/' 
+				to: 'assets/files/' 
 			}
 		])
 	]

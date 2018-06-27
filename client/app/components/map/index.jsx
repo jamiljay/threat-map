@@ -52,7 +52,7 @@ class ThreatMap extends React.Component {
     
     componentDidMount () {
 
-        fetch("./files/world-110m.json").then(response=>response.json()).then(worldData=>{
+        fetch("./assets/files/world-110m.json").then(response=>response.json()).then(worldData=>{
 
             const worldMap = feature(worldData, worldData.objects.countries).features;
 

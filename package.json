@@ -79,7 +79,8 @@
     "redux-tooltip": "^0.7.2",
     "socket.io": "^2.1.1",
     "socket.io-client": "^2.1.1",
-    "topojson-client": "^3.0.0"
+    "topojson-client": "^3.0.0",
+    "uniqid": "^5.0.3"
   },
   "devDependencies": {
     "ava": "^0.24.0",

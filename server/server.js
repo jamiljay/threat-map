@@ -20,8 +20,8 @@ app.use(express.static(path.join(__dirname, '../dist')));
 // api route 
 app.get("/rest/data", (req, res) => {
 
-	const threat1 = Attacks.generateData(uniqueKey++);
-	const threat2 = Attacks.generateData(uniqueKey++);
+	const threat1 = Attacks.generateData();
+	const threat2 = Attacks.generateData();
 
 	res.status("200").json({
 		success: true,
@@ -38,11 +38,8 @@ const server = app.listen(8080, () => {
 	
 	setInterval(()=>{
 
-		const threat1 = Attacks.generateData(uniqueKey++);
-		const threat2 = Attacks.generateData(uniqueKey++);
-
-		threats.push(threat1);
-		threats.push(threat2);
+		const threat1 = Attacks.generateData();
+		const threat2 = Attacks.generateData();
 
 		io.emit("threats-discovered", { message: "New threats discovered.", threats: [threat1, threat2] });
 

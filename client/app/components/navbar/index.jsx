@@ -15,10 +15,10 @@ const ThreatNav = (props) => (
         <NavbarBrand href="/"><i className="fa fa-lg fa-user-secret" aria-hidden="true" /> Cyber Threats</NavbarBrand>
         <Nav navbar>
             <NavItem>
-                <Link className="nav-link" to="/">Map</Link>
+                <Link className="nav-link" to="/" href="/">Map</Link>
             </NavItem>
             <NavItem>
-                <Link className="nav-link" to="/barchart">Chart</Link>
+                <Link className="nav-link" to="/barchart" href="/barchart">Chart</Link>
             </NavItem>
         </Nav>
         <Nav className="ml-auto" navbar>

@@ -154,7 +154,7 @@ class ThreatMap extends React.Component {
 
                             return (
                                 <Marker 
-                                    key={`${threat.coordinates.join("-")}`}
+                                    key={`${threat.key}`}
                                     marker={{ coordinates: threat.coordinates }}
                                     className="marker"
                                     onClick={() => this.handleMarkerClick(threat)}>

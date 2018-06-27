@@ -11,6 +11,8 @@ const app = express();
 
 const threats = [...data.threatData]; // TODO: get real data 
 
+let uniqueKey = 0;
+
 // apps up html/css/js files
 app.use(express.static(path.join(__dirname, '../dist')));
 
@@ -18,9 +20,9 @@ app.use(express.static(path.join(__dirname, '../dist')));
 // api route 
 app.get("/rest/data", (req, res) => {
 
-	const threat1 = Attacks.generateData();
-	const threat2 = Attacks.generateData();
-	
+	const threat1 = Attacks.generateData(uniqueKey++);
+	const threat2 = Attacks.generateData(uniqueKey++);
+
 	res.status("200").json({
 		success: true,
 		message: "New threats discovered.",
@@ -36,8 +38,8 @@ const server = app.listen(8080, () => {
 	
 	setInterval(()=>{
 
-		const threat1 = Attacks.generateData();
-		const threat2 = Attacks.generateData();
+		const threat1 = Attacks.generateData(uniqueKey++);
+		const threat2 = Attacks.generateData(uniqueKey++);
 
 		threats.push(threat1);
 		threats.push(threat2);

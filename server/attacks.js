@@ -16,11 +16,12 @@ const FUNCTIONS = [
 const chance = new Chance();
 
 
-function generateData () {
+function generateData (key) {
     
     const dataCount = chance.integer({ min: 0, max: 3 });
 
     return {
+        key,
         "ip": chance.ip(),
         "virus": VIRUS_NAMES.filter((virus, index)=>index <= dataCount),
         "owner": chance.bool({ likelihood: 65 })? chance.name() : chance.company(),

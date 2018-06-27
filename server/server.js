@@ -18,10 +18,13 @@ app.use(express.static(path.join(__dirname, '../dist')));
 // api route 
 app.get("/rest/data", (req, res) => {
 
+	const threat1 = Attacks.generateData();
+	const threat2 = Attacks.generateData();
+	
 	res.status("200").json({
 		success: true,
-		message: "Retrieved all threats.",
-		threats
+		message: "New threats discovered.",
+		threats: [threat1, threat2]
 	});
 });
 

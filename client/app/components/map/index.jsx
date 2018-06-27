@@ -108,17 +108,23 @@ class ThreatMap extends React.Component {
                         title="Zoom In" 
                         onClick={this.handleZoomIn}
                         type="button" 
-                        className="btn btn-secondary">+</button>
+                        className="btn btn-primary">
+                        <i className="fa fa-plus" aria-hidden="true" />
+                    </button>
                     <button 
                         title="Zoom Out" 
                         onClick={this.handleZoomOut}
                         type="button" 
-                        className="btn btn-secondary">-</button>
+                        className="btn btn-primary">
+                        <i className="fa fa-minus" aria-hidden="true" />
+                    </button>
                         <button 
                             title="Reset" 
                             onClick={this.handleReset}
                             type="button" 
-                            className="btn btn-secondary">Reset</button>
+                        className="btn btn-warning">
+                        <i className="fa fa-arrows-alt" aria-hidden="true" />
+                    </button>
                 </div>  
                 <div className="count-wrapper">
                     <div className="data-count">Trojans: {this.props.dataCounts.get("trojans").toLocaleString('en')}</div>

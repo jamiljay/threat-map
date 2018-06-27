@@ -11,7 +11,7 @@ import './style.scss';
 
 const ThreatNav = (props) => (
     <Navbar color="dark" light expand="sm">
-        <NavbarBrand href="/">Cyber Threats</NavbarBrand>
+        <NavbarBrand href="/"><i className="fa fa-lg fa-user-secret" aria-hidden="true" /> Cyber Threats</NavbarBrand>
         <Nav navbar>
             <NavItem>
                 <NavLink onClick={()=>{}}>Map</NavLink>
@@ -22,7 +22,7 @@ const ThreatNav = (props) => (
         </Nav>
         <Nav className="ml-auto" navbar>
             <NavItem>
-                <NavLink onClick={()=>{}}>Threats {props.dataCounts.get("total").toLocaleString('en')}</NavLink>
+                <NavLink onClick={()=>{}} title="Total Threats">{props.dataCounts.get("total").toLocaleString('en')}</NavLink>
             </NavItem>
         </Nav>
     </Navbar>

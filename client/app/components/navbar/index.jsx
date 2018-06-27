@@ -1,11 +1,12 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 import {
   Navbar,
   NavbarBrand,
   Nav,
-  NavItem,
-  NavLink } from 'reactstrap';
+  NavItem 
+} from 'reactstrap';
 
 import './style.scss';
 
@@ -14,15 +15,15 @@ const ThreatNav = (props) => (
         <NavbarBrand href="/"><i className="fa fa-lg fa-user-secret" aria-hidden="true" /> Cyber Threats</NavbarBrand>
         <Nav navbar>
             <NavItem>
-                <NavLink onClick={()=>{}}>Map</NavLink>
+                <Link className="nav-link" to="/">Map</Link>
             </NavItem>
             <NavItem>
-                <NavLink onClick={()=>{}}>Grid</NavLink>
+                <Link className="nav-link" to="/barchart">Chart</Link>
             </NavItem>
         </Nav>
         <Nav className="ml-auto" navbar>
-            <NavItem>
-                <NavLink onClick={()=>{}} title="Total Threats">{props.dataCounts.get("total").toLocaleString('en')}</NavLink>
+            <NavItem title="Total Threats">
+                {props.dataCounts.get("total").toLocaleString('en')}
             </NavItem>
         </Nav>
     </Navbar>

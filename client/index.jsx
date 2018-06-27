@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import PropTypes from 'prop-types';
+import { BrowserRouter } from 'react-router-dom';
 // eslint-disable-next-line import/no-extraneous-dependencies
 import { AppContainer } from 'react-hot-loader';
 import { Provider } from 'react-redux';
@@ -30,7 +31,9 @@ const render = Root => {
 	ReactDOM.render(<AppContainer>
 			<Provider store={store}>
 				<SocketProvider socket={socket}>
-					<Root />
+					<BrowserRouter>
+						<Root />
+					</BrowserRouter>
 				</SocketProvider>
 			</Provider>
 		</AppContainer>, 

@@ -1,12 +1,14 @@
 import React from 'react';
 import { Tooltip } from 'redux-tooltip';
 import { connect } from 'react-redux';
+import { Switch, Route } from 'react-router-dom';
 import { withSocket } from './components/socket';
 
 import * as Actions from './store/actions';
 
 import Navbar from './components/navbar';
 import Map from './components/map';
+import Barchart from './components/barchart';
 
 import './style.scss';
 
@@ -27,13 +29,12 @@ class Dashboard extends React.Component {
 
         return (
             <div className="app-layout">
-
                 <Navbar />
-
-                <Map />
-
+                <Switch>
+                    <Route exact path='/' component={Map}/>
+                    <Route path='/barchart' component={Barchart}/>
+                </Switch>
                 <Tooltip />
-        
             </div>
         );
     }

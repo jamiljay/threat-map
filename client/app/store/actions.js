@@ -6,12 +6,13 @@
 export const CLEAR = "CLEAR";
 export const LOAD = "LOAD";
 export const UPDATE = "UPDATE";
+export const REMOVE_MARKER = "REMOVE_MARKER";
 
 /*
  * action creators
  */
-export function clear() {
-	return { type: CLEAR };
+export function removeMarker() {
+	return { type: REMOVE_MARKER };
 }
 
 export function update(threats) {

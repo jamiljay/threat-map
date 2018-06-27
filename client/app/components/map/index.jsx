@@ -16,6 +16,8 @@ import * as Actions from '../../store/actions';
 
 import './style.scss';
 
+const CLEAR_INTERVAL = 4 * 1000; // 4 seconds
+
 const ZOOM_MAX = 8;
 const ZOOM_MIN = 1;
 
@@ -43,7 +45,7 @@ class ThreatMap extends React.Component {
     }
 
     componentWillMount () {
-        const clearing = setInterval( this.props.clear, 20 * 1000);
+        const clearing = setInterval( this.props.removeMarker, CLEAR_INTERVAL);
         
         this.setState({ clearing });
     }
@@ -114,7 +116,7 @@ class ThreatMap extends React.Component {
                             ))}
                         </Geographies>
                         <Markers>
-                        {this.props.threats.map((threat) => {
+                        {this.props.markers.map((threat) => {
 
                             // original dont have coordinates why??
                             // eslint-disable-next-line no-param-reassign
@@ -122,6 +124,7 @@ class ThreatMap extends React.Component {
 
                             return (
                                 <Marker 
+                                    key={`${threat.coordinates.join("-")}`}
                                     marker={{ coordinates: threat.coordinates }}
                                     className="marker"
                                     onClick={() => this.handleMarkerClick(threat)}>
@@ -149,14 +152,14 @@ class ThreatMap extends React.Component {
 
 function mapStateToProps(state) {
     return { 
-        app: state.app,
-        threats: state.app.get("threats").toJS() 
+        dataCounts: state.app.get("dataCounts"),
+        markers: state.app.get("markers").toJS() 
     };
 }
 
 function mapDispatchToProps(dispatch){
     return {
-        clear: () => dispatch(Actions.clear())
+        removeMarker: () => dispatch(Actions.removeMarker())
     };
 }
 

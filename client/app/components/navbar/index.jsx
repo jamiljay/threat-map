@@ -11,7 +11,7 @@ import './style.scss';
 
 const ThreatNav = (props) => (
     <Navbar color="dark" light expand="sm">
-        <NavbarBrand href="/">Cyber Threat App</NavbarBrand>
+        <NavbarBrand href="/">Cyber Threats</NavbarBrand>
         <Nav navbar>
             <NavItem>
                 <NavLink onClick={()=>{}}>Map</NavLink>

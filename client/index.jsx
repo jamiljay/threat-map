@@ -9,12 +9,6 @@ import "bootstrap/dist/css/bootstrap.css";
 
 import "font-awesome/scss/font-awesome.scss";
 
-import "primereact/resources/themes/omega/theme.css";
-import "primereact/resources/primereact.min.css";
-import "primeicons/primeicons.css";
-
-
-
 import openSocket from "socket.io-client";
 
 import App from './app/dashboard';

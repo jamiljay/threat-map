@@ -2,7 +2,6 @@ import React from "react";
 import { connect } from "react-redux";
 import { Origin } from 'redux-tooltip';
 import { feature } from "topojson-client";
-import { geoMercator } from "d3-geo";
 import {
   ComposableMap,
   ZoomableGroup,
@@ -38,8 +37,6 @@ class ThreatMap extends React.Component {
         worldMap: null,
         moving: false,
         center: [0, 0],
-        scale: 130,
-        translate: [ 800 / 2, (450 + 150) / 2 ],
         zoom: 1,
         clearing: -1
     }
@@ -63,8 +60,6 @@ class ThreatMap extends React.Component {
     componentWillUnmount () {
         clearInterval(this.state.clearing);
     }
-
-    projection = () => geoMercator().scale(this.state.scale).translate(this.state.translate)
 
     handleZoomIn = () => {
         this.setState({

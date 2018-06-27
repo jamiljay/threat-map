@@ -36,9 +36,11 @@
     
     .zoom-wrapper {
         position: absolute;
+        right: 0;
+        margin: 10px;
     
         button {
-            margin-right: 5px;
+            cursor: pointer;
         }
     }
     

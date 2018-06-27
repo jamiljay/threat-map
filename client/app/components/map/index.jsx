@@ -71,10 +71,15 @@ class ThreatMap extends React.Component {
             zoom: this.state.zoom >= ZOOM_MAX ? ZOOM_MAX : this.state.zoom + 1,
         });
     }
+
     handleZoomOut = () => {
         this.setState({
             zoom: this.state.zoom <= ZOOM_MIN ? ZOOM_MIN : this.state.zoom - 1,
         });
+    }
+
+    handleReset = () => {
+        this.setState({ zoom: 1, center: [0, 0] });
     }
 
     handleMarkerClick = (threat) => {
@@ -103,9 +108,23 @@ class ThreatMap extends React.Component {
     render() {
         return(
             <div className="map-layout">
-                <div className="zoom-wrapper">
-                    <button title="Zoom In" onClick={this.handleZoomIn}>+</button>
-                    <button title="Zoom Out" onClick={this.handleZoomOut}>-</button>
+                <div className="zoom-wrapper btn-group" role="group">
+                    <button 
+                        title="Zoom In" 
+                        onClick={this.handleZoomIn}
+                        type="button" 
+                        className="btn btn-secondary">+</button>
+                    <button 
+                        title="Zoom Out" 
+                        onClick={this.handleZoomOut}
+                        type="button" 
+                        className="btn btn-secondary">-</button>
+                        <button 
+                            title="Reset" 
+                            onClick={this.handleReset}
+                            type="button" 
+                            className="btn btn-secondary">Reset</button>
+                </div>  
                 </div>
                 <ComposableMap className={`map ${this.state.moving && "moving"}`} style={{ width: "100%", height: "calc(100% - 50px)" }}>
                     <ZoomableGroup 

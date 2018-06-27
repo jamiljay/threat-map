@@ -139,7 +139,8 @@ class ThreatMap extends React.Component {
                         <Geographies geography={this.state.worldMap}>
                             {(geographies, projection) => geographies.map((geography, i) => (
                                 <Geography
-                                    key={ geography.id }
+                                    // eslint-disable-next-line react/no-array-index-key
+                                    key={`${geography.id}-${i}`}
                                     geography={ geography }
                                     projection={ projection }
                                     fill={`rgba(72, 120, 169,${1 / this.state.worldMap.length * i})`}

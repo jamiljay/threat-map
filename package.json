@@ -42,7 +42,8 @@
   },
   "ava": {
     "files": [
-      "client/**/*_test.js"
+      "client/**/*_test.js",
+      "server/**/*_test.js"
     ],
     "source": [
       "dist/*"
@@ -52,9 +53,6 @@
     "failFast": false,
     "failWithoutAssertions": true,
     "require": [
-      "./helpers/testing/setup-browser-env.js",
-      "./helpers/testing/handsontable-polyfill.js",
-      "./helpers/testing/jquery-polyfill.js",
       "babel-register",
       "ignore-styles"
     ],
@@ -127,6 +125,8 @@
     "react-hot-loader": "^4.2.0",
     "redux-devtools": "^3.3.2",
     "redux-mock-store": "^1.5.1",
+    "request": "^2.87.0",
+    "request-promise": "^4.2.2",
     "sass-loader": "^6.0.6",
     "sinon": "^5.1.0",
     "style-loader": "^0.19.0",

@@ -26,9 +26,7 @@ const threatTooltip = threat => (
         <li><strong>{threat.owner}</strong> </li>
         <li className="spacer" />
         <li><strong>IP:</strong> {threat.ip}</li>
-        <li><strong>Function:</strong> {threat.function}</li>
-        {/* <li><strong>Coordinates:</strong> {threat.coordinates.map(p=>p.toFixed(2)).join(", ")}</li> */}
-        <li><strong>Virus:</strong> {threat.virus.join(", ")}</li>
+        <li><strong>Viruses:</strong> {threat.virus.length}</li>
     </ul>
 );
 

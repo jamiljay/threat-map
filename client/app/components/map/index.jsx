@@ -78,10 +78,18 @@ class ThreatMap extends React.Component {
     }
 
     handleMarkerClick = (threat) => {
-        this.setState({
-            center: this.state.zoom >= 4 ? [0, 0] : threat.coordinates,
-            zoom: this.state.zoom >= 4 ? 1 : 4,
-        });
+
+        let center = this.state.zoom >= 4 ? [0, 0] : threat.coordinates;
+        let zoom = this.state.zoom >= 4 ? 1 : 4;
+
+        // focus on this threat
+        if ( threat.coordinates.join() !== this.state.center.join() ) {
+
+            center = threat.coordinates;
+            zoom = 4;
+    }
+
+        this.setState({ center, zoom });
     }
 
     handleMoveStart = () => {
@@ -118,9 +126,7 @@ class ThreatMap extends React.Component {
                         <Markers>
                         {this.props.markers.map((threat) => {
 
-                            // original dont have coordinates why??
-                            // eslint-disable-next-line no-param-reassign
-                            threat.coordinates = threat.coordinates || [134.50, 79.22];
+                            const isZoomed = this.state.zoom >= 4 && this.state.center.join() === threat.coordinates.join();
 
                             return (
                                 <Marker 
@@ -130,8 +136,7 @@ class ThreatMap extends React.Component {
                                     onClick={() => this.handleMarkerClick(threat)}>
                                     <SVGOrigin className="tooltip-wrapper" content={threatTooltip(threat)}>
                                         <circle
-                                            className={`threat-marker ${this.state.zoom >= 4 ? "zoom-out" : "zoom-in"}`}
-                                            key={threat.coordinates.join("-")}
+                                            className={`threat-marker ${isZoomed ? "zoom-out" : "zoom-in"}`}
                                             cx={0}
                                             cy={0}
                                             r={threat.virus.length*2}

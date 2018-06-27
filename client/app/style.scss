@@ -8,3 +8,21 @@ body,
     background-color: #292929;
 }
 
+
+    
+.threat-tooltip {
+    padding: 0;
+
+    li {
+        margin-bottom: 10px;
+        list-style: none;
+    }
+
+    li:last-child {
+        margin-bottom: 0;
+    }
+
+    .spacer {
+        border: solid 1px black;
+    }
+}

@@ -125,8 +125,12 @@ class ThreatMap extends React.Component {
                             type="button" 
                             className="btn btn-secondary">Reset</button>
                 </div>  
+                <div className="count-wrapper">
+                    <div className="data-count">Trojans: {this.props.dataCounts.get("trojans").toLocaleString('en')}</div>
+                    <div className="data-count">Bots: {this.props.dataCounts.get("bots").toLocaleString('en')}</div>
+                    <div className="data-count">Spam: {this.props.dataCounts.get("spam").toLocaleString('en')}</div>
                 </div>
-                <ComposableMap className={`map ${this.state.moving && "moving"}`} style={{ width: "100%", height: "calc(100% - 50px)" }}>
+                <ComposableMap className={`map ${this.state.moving && "moving"}`} style={{ width: "100%", height: "100%" }}>
                     <ZoomableGroup 
                         zoom={this.state.zoom} 
                         center={this.state.center}
@@ -153,12 +157,14 @@ class ThreatMap extends React.Component {
                                     marker={{ coordinates: threat.coordinates }}
                                     className="marker"
                                     onClick={() => this.handleMarkerClick(threat)}>
-                                    <SVGOrigin className="tooltip-wrapper" content={threatTooltip(threat)}>
+                                    <SVGOrigin content={threatTooltip(threat)}>
                                         <circle
                                             className={`threat-marker ${isZoomed ? "zoom-out" : "zoom-in"}`}
                                             cx={0}
                                             cy={0}
                                             r={threat.virus.length * this.state.zoom * 2}
+                                            fill="rgba(233, 30, 99)"
+                                            stroke="rgba(199, 14, 77)"
                                         />
                                     </SVGOrigin>
                                 </Marker>

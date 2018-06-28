@@ -33,24 +33,24 @@ To load the application, navigate to **[localhost:5000](http://localhost:5000)**
 ![alt text](./images/click-zoom-zoomed.png "Picture of Application")
 
 #### Routes
-Use the navbar links (Map & Chart) to route between **Map** view and **Bar Chart** views (Chart is not implemented).
+Use the navbar links (Map & Chart) to route between *Map* view and *Bar Chart* views (Chart is not implemented).
 
 #### Threat data counters 
-To the right of the navbar is a **Total Virus Counter**.
+To the right of the navbar is a *Total Virus Counter*.
 
-To the left of the map are **Virus Counters** for:
+To the left of the map are *Virus Counters* for:
 * Trojans
 * Bots
 * Spam
 
 #### Map Panning 
-**Click** and **Drag** to pan map
+*Click* and *Drag* to pan map
 
 #### Marker Animmations
-There will be **Expanding** and **Flashing Animations** for each new threat.
+There will be *Expanding* and *Flashing Animations* for each new threat.
 
 #### ToolTips 
-**Hovering** over a **Marker** will display a tooltip with threat information.
+*Hovering* over a *Marker* will display a tooltip with threat information.
 
 #### Zoom Functionality
 
@@ -59,4 +59,4 @@ To the right of the map are buttons for changing map Zoom levels.
 * Zoom-Out
 * Reset 
 
-Alternatively, **Click** on a **Marker** to zoom and center on that marker. **Click Again** to zoom out.
+Alternatively, *Click* on a *Marker* to zoom and center on that marker. *Click Again* to zoom out.

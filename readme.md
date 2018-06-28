@@ -6,14 +6,12 @@
 
 ---
 
-### Configuring
+## Configuring
 Clone or download codebase
 
 install dependencies with `npm install`
 
----
-
-### Running
+## Running
 
 #### Production
 `npm run build:prod` Creates distribution files under `dist/`
@@ -29,17 +27,12 @@ To load the application, navigate to **[localhost:8080](http://localhost:8080)**
 
 To load the application, navigate to **[localhost:5000](http://localhost:5000)** in your browser.
 
----
-
 ## Testing  
-
 `npm run ava` will run all tests 
 
 TODOs: 
 * Create client tests
 * Add socket tests
-
----
 
 ## Features 
 ![alt text](./images/click-zoom-zoomed.png "Picture of Application")

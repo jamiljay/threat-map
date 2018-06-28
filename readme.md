@@ -4,8 +4,6 @@
 > #### UI Challenge
 > Create a map dashboard showing network related information associated with a set of IP addresses distributed across the globe and the US.  
 
----
-
 ## Configuring
 Clone or download codebase
 

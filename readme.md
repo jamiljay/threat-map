@@ -13,19 +13,31 @@ install dependencies with `npm install`
 
 ---
 
-### Production 
+### Running
+
+#### Production
 `npm run build:prod` Creates distribution files under `dist/`
 
 `npm run server` will run server at localhost:8080
 
 To load the application, navigate to **[localhost:8080](http://localhost:8080)** in your browser.
 
-### Development 
+#### Development 
 `npm start` will run webpack-dev-server will run at localhost:5000 
 
 `npm run server` will run server at localhost:8080
 
 To load the application, navigate to **[localhost:5000](http://localhost:5000)** in your browser.
+
+---
+
+## Testing  
+
+`npm run ava` will run all tests 
+
+TODOs: 
+* Create client tests
+* Add socket tests
 
 ---
 

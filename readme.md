@@ -1,5 +1,5 @@
 # Threat Map
-![alt text](./images/threat_map.png "Picture of Application")
+![alt text](./images/demo.gif "Picture of Application")
 
 > #### UI Challenge
 > Create a map dashboard showing network related information associated with a set of IP addresses distributed across the globe and the US.  
